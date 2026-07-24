@@ -62,16 +62,39 @@
 
         .btn:hover{
             background:#1b5e20;
-        }
+        }.categories{
+    padding:50px 20px;
+    text-align:center;
+}
+
+.categories h2{
+    color:#2e7d32;
+    margin-bottom:30px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card h3{
+    color:#2e7d32;
+    margin-bottom:10px;
+}
     </style>
-
-</head>
-<body>
-
-<header>
-    <h1>🌾 AgriRank Academy</h1>
-    <p>Learn • Prepare • Succeed</p>
-</header>
 
 <section class="hero">
     <h2>Welcome Future Agriculture Officers</h2>
@@ -82,6 +105,27 @@
     </p>
 
     <a href="#" class="btn">Explore Notes</a>
+</section>
+<section class="cards">
+  <div class="card">
+    <h3>📚 Agriculture Notes</h3>
+    <p>Semester-wise Hindi & English notes for B.Sc. Agriculture students.</p>
+  </div>
+
+  <div class="card">
+    <h3>🎯 ICAR JRF</h3>
+    <p>Important topics, study material, MCQs and previous year questions.</p>
+  </div>
+
+  <div class="card">
+    <h3>📥 Download PDFs</h3>
+    <p>Download notes and study material in PDF format for free.</p>
+  </div>
+
+  <div class="card">
+    <h3>💬 Community</h3>
+    <p>Discussion section where students can ask questions and help each other.</p>
+  </div>
 </section>
 
 </body>
