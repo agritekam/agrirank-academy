@@ -93,6 +93,91 @@
 .card h3{
     color:#2e7d32;
     margin-bottom:10px;
+}/* ================= NOTES SECTION ================= */
+
+.notes-section{
+    padding:60px 20px;
+    background:#f5f9f4;
+}
+
+.notes-section h2{
+    text-align:center;
+    color:#1b5e20;
+    font-size:32px;
+    margin-bottom:10px;
+}
+
+.notes-subtitle{
+    text-align:center;
+    color:#666;
+    margin-bottom:40px;
+    font-size:16px;
+}
+
+.year-box{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+}
+
+.year-card{
+    background:#fff;
+    border-radius:15px;
+    padding:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.year-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+.year-card h3{
+    color:#2e7d32;
+    margin-bottom:15px;
+    text-align:center;
+}
+
+.semester{
+    margin-top:20px;
+}
+
+.semester h4{
+    color:#1565c0;
+    margin-bottom:10px;
+}
+
+.semester ul{
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+.semester li{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#f8f8f8;
+    padding:10px 12px;
+    margin-bottom:10px;
+    border-radius:10px;
+    font-size:15px;
+}
+
+.semester button{
+    background:#2e7d32;
+    color:#fff;
+    border:none;
+    border-radius:20px;
+    padding:6px 12px;
+    cursor:pointer;
+    font-size:13px;
+    transition:.3s;
+}
+
+.semester button:hover{
+    background:#1b5e20;
 }
     </style>
     </head>
@@ -130,6 +215,61 @@
     <p>Discussion section where students can ask questions and help each other.</p>
   </div>
 </section>
+<!-- ================= NOTES SECTION START ================= -->
+<section id="notes" class="notes-section">
 
+  <h2>📚 Agriculture Notes</h2>
+  <p class="notes-subtitle">
+    Semester-wise Notes for B.Sc. Agriculture (Hindi & English)
+  </p>
+
+  <div class="year-box">
+
+    <div class="year-card">
+      <h3>1st Year</h3>
+
+      <div class="semester">
+        <h4>1st Semester</h4>
+
+        <ul>
+          <li>🌱 Agronomy <button>Coming Soon</button></li>
+          <li>🌿 Horticulture <button>Coming Soon</button></li>
+          <li>🧪 Soil Science <button>Coming Soon</button></li>
+          <li>🐞 Entomology <button>Coming Soon</button></li>
+        </ul>
+      </div>
+
+      <div class="semester">
+        <h4>2nd Semester</h4>
+
+        <ul>
+          <li>🌾 Genetics <button>Coming Soon</button></li>
+          <li>💧 Irrigation <button>Coming Soon</button></li>
+          <li>🌱 Crop Physiology <button>Coming Soon</button></li>
+          <li>📖 English <button>Coming Soon</button></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="year-card">
+      <h3>2nd Year</h3>
+      <p>Coming Soon...</p>
+    </div>
+
+    <div class="year-card">
+      <h3>3rd Year</h3>
+      <p>Coming Soon...</p>
+    </div>
+
+    <div class="year-card">
+      <h3>4th Year</h3>
+      <p>Coming Soon...</p>
+    </div>
+
+  </div>
+
+</section>
+<!-- ================= NOTES SECTION END ================= -->
 </body>
 </html>
