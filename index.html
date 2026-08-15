@@ -1,243 +1,308 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AgriRank Academy</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgriRank Academy</title>
 
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-}
-
-body{
-background:#f5f5f5;
-}
-
-header{
-background:#2e7d32;
-color:white;
-padding:20px;
-text-align:center;
-}
-
-nav{
-background:#1b5e20;
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-}
-
-nav a{
-color:white;
-padding:15px 20px;
-text-decoration:none;
-}
-
-nav a:hover{
-background:#43a047;
-}
-
-.hero{
-text-align:center;
-padding:60px 20px;
-background:white;
-}
-
-.hero h1{
-font-size:40px;
-color:#2e7d32;
-}
-
-.hero p{
-font-size:18px;
-margin-top:15px;
-}
-
-.btn{
-display:inline-block;
-margin-top:25px;
-padding:12px 25px;
-background:#2e7d32;
-color:white;
-text-decoration:none;
-border-radius:5px;
-}.search-box{
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial,sans-serif;
+    }.jrf-section{
+    background:#f4f7f5;
+    padding:40px 20px;
     text-align:center;
-    margin:30px auto;
 }
 
-.search-box input{
-    width:85%;
-    max-width:500px;
-    padding:14px;
-    border:2px solid #2e7d32;
-    border-radius:30px;
-    font-size:16px;
-    outline:none;
+.jrf-section h2{
+    color:#2e7d32;
+    margin-bottom:10px;
 }
 
-.section{
-padding:40px 20px;
-text-align:center;
+.jrf-section > p{
+    margin-bottom:25px;
 }
 
-.cards{
-display:flex;
-flex-wrap:wrap;
+.jrf-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    max-width:1000px;
+    margin:auto;
+}
+
+.jrf-card{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.15);
+    transition:0.3s;
+}
+
+.jrf-card:hover{
+    transform:translateY(-5px);
+}
+
+.jrf-card h3{
+    color:#2e7d32;
+    margin-bottom:10px;
+}
+
+.jrf-card p{
+    margin-bottom:15px;
+}
+
+.jrf-card a{
+    display:inline-block;
+    background:#2e7d32;
+    color:white;
+    padding:10px 15px;
+    border-radius:6px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+    body{
+      background:#f4f7f5;
+      color:#333;
+    }
+
+    header{
+      background:#2e7d32;
+      color:white;
+      padding:20px;
+      text-align:center;
+
+    }
+
+    nav{
+      background:#1b5e20;
+      padding:10px;
+      text-align:center;
+      display:flex;
 justify-content:center;
 gap:20px;
-margin-top:20px;
+    }
+    nav a{
+      color:white;
+      text-decoration:none;
+      margin:0 12px;
+      font-weight:bold;
+    }
+
+    .hero{
+      text-align:center;
+      padding:50px 20px;
+    }
+
+    .hero h1{
+      color:#2e7d32;
+      margin-bottom:10px;
+    }
+
+    .btn{
+      display:inline-block;
+      margin-top:20px;
+      background:#2e7d32;
+      color:white;
+      padding:12px 20px;
+      border-radius:6px;
+      text-decoration:none;
+    }
+
+    footer{
+      background:#2e7d32;
+      color:white;
+      text-align:center;
+      padding:15px;
+      margin-top:40px;
+    }.search-section{
+  background:#ffffff;
+  padding:20px;
+  text-align:center;
 }
 
-.card{
-background:white;
-width:280px;
-padding:20px;
-border-radius:10px;
-box-shadow:0 2px 10px rgba(0,0,0,0.1);
+.search-section input{
+  width:250px;
+  padding:10px 15px;
+  font-size:15px;
+  border:2px solid #2e7d32;
+  border-radius:25px;
+  outline:none;
+    }.notes{
+    padding:40px 20px;
+    text-align:center;
 }
 
-footer{
-background:#1b5e20;
-color:white;
-padding:15px;
-text-align:center;
-margin-top:30px;}
-.details{
-  margin-top:10px;
-  display:none;
+.notes h2{
+    color:#2e7d32;
+    margin-bottom:25px;
 }
 
-.details a{
-  display:block;
-  padding:8px;
-  margin:5px 0;
-  background:#e8f5e9;
-  color:#1b5e20;
-  text-decoration:none;
-  border-radius:6px;
+.note-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:20px;
 }
 
-.card{
-  cursor:pointer;
+.note-card{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.15);
+    transition:0.3s;
 }
 
-.card.active .details{
-  display:block;
+.note-card:hover{
+    transform:translateY(-5px);
 }
-</style>
 
+.note-card h3{
+    color:#2e7d32;
+    margin-bottom:10px;
+}
+
+.note-card a{
+    display:block;
+    margin:8px 0;
+    text-decoration:none;
+    color:#1b5e20;
+    font-weight:bold;
+}
+    .jrf-section{
+    padding:40px 20px;
+    text-align:center;
+}
+
+.jrf-section h2{
+    color:#2e7d32;
+    margin-bottom:15px;
+}
+
+.jrf-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.jrf-card{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.15);
+}
+
+.jrf-card h3{
+    color:#2e7d32;
+    margin-bottom:10px;
+}
+
+.jrf-card a{
+    display:inline-block;
+    margin-top:10px;
+    text-decoration:none;
+    color:#1b5e20;
+    font-weight:bold;
+  }
+  </style>
 </head>
 <body>
 
 <header>
-<h1>AgriRank Academy</h1>
-<p>Your Agriculture Learning Partner</p>
+  <h1>AgriRank Academy</h1>
+  <p>Free Agriculture Notes & ICAR JRF Preparation</p>
 </header>
 
 <nav>
-<a href="#">Home</a>
-<a href="#">Notes</a>
-<a href="#">MCQs</a>
-<a href="#">PDF</a>
-<a href="#">Contact</a>
+  <a href="#">Home</a>
+  <a href="#">Notes</a>
+  <a href="#">MCQs</a>
+  <a href="#">About</a>
 </nav>
-<div class="search-box">
-    <input type="text" placeholder="🔍 Search Notes, JRF, PDFs...">
-</div>
+
+<section class="search-section">
+  <input type="text" placeholder="🔍 Search Notes..." id="searchBox">
+</section>
+
+
 <section class="hero">
-<h1>Welcome to AgriRank Academy</h1>
-<p>Best Notes, MCQs & PDF for Agriculture Students and ICAR JRF Preparation.</p>
+  <h1>Test by Tekaam</h1>
+  <p>Learn Agriculture with Free Notes, MCQs and Study Material.</p>
 
-<a class="btn" href="#">Start Learning</a>
+  <a href="#" class="btn">Explore Notes</a>
 </section>
+  <section class="jrf-section">
 
-<section class="section">
+    <h2>🎯 ICAR JRF Preparation</h2>
 
-<h2>Our Services</h2>
+    <p>Complete study material and practice resources for ICAR JRF aspirants.</p>
 
-<div class="cards">
+    <div class="jrf-grid">
 
-<div class="card" onclick="toggleDetails(this)">
-<h3>📚 Notes</h3>
-<p>Easy Agriculture Notes.</p>
-<div class="details">
-    <a href="#">🇬🇧 English Notes</a>
-    <a href="#">🇮🇳 Hindi Notes</a>
-</div>
-</div>
+        <div class="jrf-card">
+            <h3>🌱 Horticulture JRF</h3>
+            <p>Complete Horticulture preparation material.</p>
+            <a href="jrf-horticulture.html">Start Preparation</a>
+        </div>
 
-<div class="card">
-<h3>📝 MCQs</h3>
-<p>Practice important questions.</p>
-</div>
+        <div class="jrf-card">
+            <h3>📚 Important Topics</h3>
+            <p>Most important topics for JRF preparation.</p>
+            <a href="jrf-topics.html">View Topics</a>
+        </div>
 
-<div class="card">
-<h3>📄 PDF</h3>
-<p>Download study material.</p>
-</div>
+        <div class="jrf-card">
+            <h3>❓ JRF MCQs</h3>
+            <p>Practice important expected MCQs.</p>
+            <a href="jrf-mcqs.html">Practice MCQs</a>
+        </div>
 
-</div>
+        <div class="jrf-card">
+            <h3>📄 Previous Year Questions</h3>
+            <p>Practice previous year questions.</p>
+            <a href="jrf-pyq.html">View Questions</a>
+        </div>
 
+    </div>
+
+  </section>
+<section class="notes">
+    <h2>📚 Agriculture Notes</h2>
+
+    <div class="note-grid">
+
+        <div class="note-card">
+            <h3><a href="1styear.html">1st Year</a></h3>
+            <a href="1stsem.html">Semester 1</a>
+            <a href="2ndsem.html">Semester 2</a>
+        </div>
+
+        <div class="note-card">
+            <h3>2nd Year</h3>
+            <a href="3rdsem.html">Semester 3</a>
+            <a href="4thsem.html">Semester 4</a>
+        </div>
+
+        <div class="note-card">
+            <h3>3rd Year</h3>
+            <a href="5thsem.html">Semester 5</a>
+            <a href="6thsem.html">Semester 6</a>
+        </div>
+
+        <div class="note-card">
+            <h3>4th Year</h3>
+            <a href="7thsem.html">Semester 7</a>
+            <a href="8thsem.html">Semester 8</a>
+        </div>
+
+    </div>
 </section>
-
-<section class="section">
-  <h2>📝 Writing Notes</h2>
-
-  <div class="cards">
-    <div class="card" onclick="toggleDetails(this)">
-    <h3>📘 1st Year</h3>
-
-    <div class="details">
-        <a href="1stsem.html">1st sem.</a>
-        <a href="2ndsem.html">2nd sem.</a>
-    </div>
-</div>
-
-<div class="card" onclick="toggleDetails(this)">
-    <h3>📗 2nd Year</h3>
-
-    <div class="details">
-        <a href="3rdsem.html">3rd sem.</a>
-        <a href="4thsem.html">4th sem.</a>
-    </div>
-</div>
-
-<div class="card" onclick="toggleDetails(this)">
-    <h3>📙 3rd Year</h3>
-
-    <div class="details">
-        <a href="5thsem.html">5th sem.</a>
-        <a href="6thsem.html">6th  sem.</a>
-    </div>
-</div>
-
-<div class="card" onclick="toggleDetails(this)">
-    <h3>📕 4th Year</h3>
-
-    <div class="details">
-        <a href="#">7th sem.</a>
-        <a href="#">8th sem.</a>
-    </div>
-</div>
-</div>
-
- </div>
-
-</section>
-
 <footer>
-© 2026 AgriRank Academy ✅ | Made with ❤️ by Tekaam
+  © 2026 AgriRank Academy. All Rights Reserved.
 </footer>
-<script>
-function toggleDetails(card) {
-    card.classList.toggle("active");
-}
-</script>
 
 </body>
 </html>
+    
